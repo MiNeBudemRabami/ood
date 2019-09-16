@@ -73,8 +73,11 @@ public:
 class FlyNoWay : public IFlyBehavior
 {
 public:
-	void Fly() override {}
+	void Fly() override 
+	{
+	}
 };
+
 
 struct IQuackBehavior
 {
@@ -222,10 +225,11 @@ void PlayWithDuck(Duck& duck)
 	DrawDuck(duck);
 	duck.Quack();
 	duck.Dance();
+
+	duck.Fly();
+	duck.Fly();
+	duck.Fly();
 	cout << endl;
-	duck.Fly();
-	duck.Fly();
-	duck.Fly();
 }
 
 int main()
@@ -244,6 +248,6 @@ int main()
 
 	ModelDuck modelDuck;
 	PlayWithDuck(modelDuck);
-	modelDuck.SetFlyBehavior(make_unique<FlyWithWings>());
-	PlayWithDuck(modelDuck);
+	//modelDuck.SetFlyBehavior(make_unique<FlyWithWings>());
+	//PlayWithDuck(modelDuck);
 }
