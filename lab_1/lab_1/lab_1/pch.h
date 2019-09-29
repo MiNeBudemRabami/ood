@@ -11,4 +11,10 @@
 
 // TODO: add headers that you want to pre-compile here
 
+#include <iostream>
+#include <cassert>
+#include <iostream>
+#include <memory>
+#include <vector>
+
 #endif //PCH_H

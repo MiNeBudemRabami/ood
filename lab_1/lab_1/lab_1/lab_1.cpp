@@ -1,25 +1,8 @@
 ﻿#include "pch.h"
-#include <cassert>
-#include <iostream>
-#include <memory>
-#include <vector>
+#include "IDanceBehavior.h"
+#include "DancinWals.h"
 
 using namespace std;
-
-struct IDanceBehavior
-{
-	virtual ~IDanceBehavior() {};
-	virtual void Dance() = 0;
-};
-
-class DancinWals : public IDanceBehavior
-{
-public:
-	void Dance() override
-	{
-		cout << "I'm dancin wals!!" << endl;
-	}
-};
 
 class DancinMenuet : public IDanceBehavior
 {
