@@ -1,4 +1,5 @@
 ﻿#include "pch.h"
+#include <cassert>
 #include "IDanceBehavior.h"
 #include "DancinWals.h"
 
