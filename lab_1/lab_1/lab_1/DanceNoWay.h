@@ -1,8 +1,9 @@
 #pragma once
 #include "IDanceBehavior.h"
 
-class DancinWals : public IDanceBehavior
+class DanceNoWay : public IDanceBehavior
 {
 public:
 	void Dance() override;
 };
+

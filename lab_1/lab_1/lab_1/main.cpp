@@ -1,53 +1,19 @@
 ﻿#include "pch.h"
 #include "IDanceBehavior.h"
 #include "DancinWals.h"
+#include "DancinMenuet.h"
+#include "IFlyBehavior.h"
 
 using namespace std;
 
-class DancinMenuet : public IDanceBehavior
-{
-public:
-	void Dance() override
-	{
-		cout << "I'm dancin menuet!!" << endl;
-	}
-};
 
-class DanceNoWay : public IDanceBehavior
-{
-public:
-	void Dance() override
-	{
-	}
-};
 
-struct IFlyBehavior
-{
-	virtual ~IFlyBehavior() {};
-	virtual void Fly() = 0;
-};
 
-class FlyWinthCounter : public IFlyBehavior
-{
-public:
-	virtual ~FlyWinthCounter() = default;
-
-	void Fly() final
-	{
-		++count;
-		FlyCountet(count);
-	}
-
-	virtual void FlyCountet(unsigned count) = 0;
-
-private:
-	unsigned count = 0;
-};
 
 class FlyWithWings : public FlyWinthCounter
 {
 public:
-	void FlyCountet(unsigned count) override
+	void FlyCounter(unsigned count) override
 	{
 		cout << "I'm flying with wings!! " << count << " times" << endl;
 	}
