@@ -163,7 +163,10 @@
     <ClCompile Include="DanceNoWay.cpp" />
     <ClCompile Include="DancinMenuet.cpp" />
     <ClCompile Include="DancinWals.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="FlyWithCounter.cpp" />
+=======
+>>>>>>> e36eb9c7888c2507db72db0bb3d4d2213ad76ebf
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

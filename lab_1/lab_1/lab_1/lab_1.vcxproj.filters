@@ -45,6 +45,7 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+<<<<<<< HEAD
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="DancinMenuet.cpp">
@@ -54,6 +55,8 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="FlyWithCounter.cpp">
+=======
+>>>>>>> e36eb9c7888c2507db72db0bb3d4d2213ad76ebf
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
