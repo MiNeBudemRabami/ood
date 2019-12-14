@@ -4,6 +4,8 @@
 #include "DancinWals.h"
 #include "DancinMenuet.h"
 #include "IFlyBehavior.h"
+#include "FlyWithCounter.h"
+#include "DanceNoWay.h"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ using namespace std;
 
 
 
-class FlyWithWings : public FlyWinthCounter
+class FlyWithWings : public FlyWithCounter
 {
 public:
 	void FlyCounter(unsigned count) override

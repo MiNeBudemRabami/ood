@@ -3,8 +3,8 @@
 
 using namespace std;
 
-void FlyWithCounter::Fly() final
+void FlyWithCounter::Fly()
 {
 	++count;
-	FlyCountet(count);
+	FlyCounter(count);
 }

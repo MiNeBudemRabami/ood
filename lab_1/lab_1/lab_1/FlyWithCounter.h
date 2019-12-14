@@ -1,11 +1,13 @@
 #pragma once
 #include "IFlyBehavior.h"
 
-class FlyWinthCounter : public IFlyBehavior
+class FlyWithCounter : public IFlyBehavior
 {
 public:
-	virtual ~FlyWinthCounter() = default;
-	virtual void FlyCountet(unsigned count) = 0;
+	virtual ~FlyWithCounter() = default;
+	virtual void FlyCounter(unsigned count) = 0;
+
+	void Fly() final;
 
 private:
 	unsigned count = 0;
