@@ -24,6 +24,18 @@
     <ClInclude Include="DancinWals.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="DancinMenuet.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DanceNoWay.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="FlyWithCounter.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="IFlyBehavior.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -33,6 +45,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+<<<<<<< HEAD
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="DancinMenuet.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="DanceNoWay.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="FlyWithCounter.cpp">
+=======
+>>>>>>> e36eb9c7888c2507db72db0bb3d4d2213ad76ebf
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

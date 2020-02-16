@@ -151,12 +151,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DanceNoWay.h" />
+    <ClInclude Include="DancinMenuet.h" />
     <ClInclude Include="DancinWals.h" />
+    <ClInclude Include="FlyWithCounter.h" />
     <ClInclude Include="IDanceBehavior.h" />
+    <ClInclude Include="IFlyBehavior.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DanceNoWay.cpp" />
+    <ClCompile Include="DancinMenuet.cpp" />
     <ClCompile Include="DancinWals.cpp" />
+    <ClCompile Include="FlyWithCounter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
