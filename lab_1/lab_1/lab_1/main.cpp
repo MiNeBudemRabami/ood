@@ -6,21 +6,9 @@
 #include "IFlyBehavior.h"
 #include "FlyWithCounter.h"
 #include "DanceNoWay.h"
+#include "FlyWithWings.h"
 
 using namespace std;
-
-
-
-
-
-class FlyWithWings : public FlyWithCounter
-{
-public:
-	void FlyCounter(unsigned count) override
-	{
-		cout << "I'm flying with wings!! " << count << " times" << endl;
-	}
-};
 
 class FlyNoWay : public IFlyBehavior
 {
@@ -29,7 +17,6 @@ public:
 	{
 	}
 };
-
 
 struct IQuackBehavior
 {
@@ -45,6 +32,7 @@ public:
 		cout << "Quack Quack!!!" << endl;
 	}
 };
+
 class SqueakBehavior : public IQuackBehavior
 {
 public:
