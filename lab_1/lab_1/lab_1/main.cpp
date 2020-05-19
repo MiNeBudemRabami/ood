@@ -59,6 +59,7 @@ public:
 		m_danceBehavior(move(danceBehavior))
 	{
 		assert(m_quackBehavior);
+		assert(m_danceBehavior);
 		SetFlyBehavior(move(flyBehavior));
 	}
 	void Quack() const
