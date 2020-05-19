@@ -5,6 +5,6 @@
 
 class FlyWithWings: public FlyWithCounter
 {
-
 public:
+	void Fly() override;
 };
