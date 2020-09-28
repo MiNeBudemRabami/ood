@@ -15,7 +15,7 @@ struct SWeatherInfo
 	double pressure = 0;
 };
 
-class CDisplay : public IObserver<SWeatherInfo>
+class CDisplay: public IObserver<SWeatherInfo>
 {
 private:
 	/* Метод Update сделан приватным, чтобы ограничить возможность его вызова напрямую
@@ -31,9 +31,7 @@ private:
 	}
 };
 
-class CStatsDisplay : public IObserver<SWeatherInfo> {};
-
-class CAbstractStatsDisplay : public IObserver<SWeatherInfo>
+class CStatsDisplay : public IObserver<SWeatherInfo>
 {
 protected:
 	virtual string GetAlias() const = 0;
@@ -46,42 +44,33 @@ private:
 	*/
 	void Update(SWeatherInfo const& data) override
 	{
-		if (m_minTemperature > data.temperature)
-			if (m_minValue > GetValue(data))
-			{
-				m_minTemperature = data.temperature;
-				m_minValue = GetValue(data);
-			}
-		if (m_maxTemperature < data.temperature)
-			if (m_maxValue < GetValue(data))
-			{
-				m_maxTemperature = data.temperature;
-				m_maxValue = GetValue(data);
-			}
-		m_accTemperature += data.temperature;
+		if (m_minValue > GetValue(data))
+		{
+			m_minValue = GetValue(data);
+		}
+		if (m_maxValue < GetValue(data))
+		{
+			m_maxValue = GetValue(data);
+		}
 		m_accValue += GetValue(data);
-		++m_countAcc;
 
-		std::cout << "Max Temp " << m_maxTemperature << std::endl;
-		std::cout << "Min Temp " << m_minTemperature << std::endl;
-		std::cout << "Average Temp " << (m_accTemperature / m_countAcc) << std::endl;
-		std::cout << "Max " << GetAlias() << " " << m_maxValue << std::endl;
-		std::cout << "Min " << GetAlias() << " " << m_minValue << std::endl;
-		std::cout << "Average " << GetAlias() << " " << (m_accValue / m_countAcc) << std::endl;
-		std::cout << "----------------" << std::endl;
+		++m_countAcc;
+		cout << "Max " << GetAlias() << " " << m_maxValue << endl;
+		cout << "Min " << GetAlias() << " " << m_minValue << endl;
+		cout << "Average " << GetAlias() << " " << (m_accValue / m_countAcc) << endl;		
+		cout << "----------------" << endl;
 	}
 
-	double m_minTemperature = std::numeric_limits<double>::infinity();
-	double m_maxTemperature = -std::numeric_limits<double>::infinity();
-	double m_accTemperature = 0;
-	double m_minValue = std::numeric_limits<double>::infinity();
-	double m_maxValue = -std::numeric_limits<double>::infinity();
+	double m_minValue = -numeric_limits<double>::infinity();
+	double m_maxValue = numeric_limits<double>::infinity();
+
 	double m_accValue = 0;
+
 	unsigned m_countAcc = 0;
 
 };
 
-class CTemperatureStatsDisplay : public CAbstractStatsDisplay
+class CTemperatureStatsDisplay : public CStatsDisplay
 {
 private:
 	string GetAlias() const final
@@ -94,7 +83,7 @@ private:
 	}
 };
 
-class CHumidityStatsDisplay : public CAbstractStatsDisplay
+class CHumidityStatsDisplay : public CStatsDisplay
 {
 private:
 	string GetAlias() const final
@@ -107,7 +96,7 @@ private:
 	}
 };
 
-class CPressureStatsDisplay : public CAbstractStatsDisplay
+class CPressureStatsDisplay : public CStatsDisplay
 {
 private:
 	string GetAlias() const final
@@ -119,6 +108,7 @@ private:
 		return data.pressure;
 	}
 };
+
 
 class CWeatherData : public CObservable<SWeatherInfo>
 {
@@ -138,18 +128,20 @@ public:
 	{
 		return m_pressure;
 	}
+
 	void MeasurementsChanged()
 	{
 		NotifyObservers();
 	}
+
 	void SetMeasurements(double temp, double humidity, double pressure)
 	{
 		m_humidity = humidity;
 		m_temperature = temp;
 		m_pressure = pressure;
+
 		MeasurementsChanged();
 	}
-
 protected:
 	SWeatherInfo GetChangedData()const override
 	{
@@ -159,9 +151,8 @@ protected:
 		info.pressure = GetPressure();
 		return info;
 	}
-	
 private:
 	double m_temperature = 0.0;
-	double m_humidity = 0.0;
-	double m_pressure = 760.0;
+	double m_humidity = 0.0;	
+	double m_pressure = 760.0;	
 };
