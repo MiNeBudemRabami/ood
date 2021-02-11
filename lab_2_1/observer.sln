@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherStation", "WeatherStation\WeatherStation.vcxproj", "{FCDB7FE8-7A0C-43DC-B476-4AB6B6DF5933}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObserverWithSignals", "ObserverWithSignals\ObserverWithSignals.vcxproj", "{191EF9FD-C65B-4EF5-B99A-4E1C6CA90AEC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObserverWithSignallingValue", "ObserverWithSignallingValue\ObserverWithSignallingValue.vcxproj", "{6310A729-E7C6-4634-B254-B647F28976B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "weather_test", "weather_test\weather_test.vcxproj", "{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,8 +53,19 @@ Global
 		{6310A729-E7C6-4634-B254-B647F28976B4}.Release|x64.Build.0 = Release|x64
 		{6310A729-E7C6-4634-B254-B647F28976B4}.Release|x86.ActiveCfg = Release|Win32
 		{6310A729-E7C6-4634-B254-B647F28976B4}.Release|x86.Build.0 = Release|Win32
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Debug|x64.ActiveCfg = Debug|x64
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Debug|x64.Build.0 = Debug|x64
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Debug|x86.ActiveCfg = Debug|Win32
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Debug|x86.Build.0 = Debug|Win32
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Release|x64.ActiveCfg = Release|x64
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Release|x64.Build.0 = Release|x64
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Release|x86.ActiveCfg = Release|Win32
+		{A27BBBDC-FDA9-478E-852E-63C0D16ECD9C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFCE096C-C6E8-4D9B-87F2-7E4A82BD484B}
 	EndGlobalSection
 EndGlobal

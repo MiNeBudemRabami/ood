@@ -1,5 +1,6 @@
 #include "WeatherData.h"
 
+
 int main()
 {
 	CWeatherData wd;
