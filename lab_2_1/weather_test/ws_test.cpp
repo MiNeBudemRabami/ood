@@ -1,6 +1,5 @@
 #define CATCH_CONFIG_MAIN
 #include "..\\catch.hpp"
-
 #include "..\\WeatherStation\\Observer.h"
 
 namespace
@@ -70,4 +69,35 @@ TEST_CASE("test basic", "[single-file]")
 	REQUIRE(observer1.IsNotified());
 	REQUIRE(observer2.IsNotified());
 	REQUIRE(!observer3.IsNotified());
+}
+
+TEST_CASE("TestObserverSelfUnsubscribe", "[single-file]")
+{
+	CMockObservable observable;
+
+	CMockObserver observer1;
+	observable.RegisterObserver(observer1);
+
+	CMockObserver observer2;
+	observer2.SetUnsubscribeSelf(&observable);
+	observable.RegisterObserver(observer2);
+
+	CMockObserver observer3;
+	observable.RegisterObserver(observer3);
+
+	observable.NotifyObservers();
+
+	REQUIRE(observer1.IsNotified());
+	REQUIRE(observer2.IsNotified());
+	REQUIRE(observer3.IsNotified());
+
+	observer1.ResetNotified();
+	observer2.ResetNotified();
+	observer3.ResetNotified();
+
+	observable.NotifyObservers();
+
+	REQUIRE(observer1.IsNotified());
+	REQUIRE(!observer2.IsNotified());
+	REQUIRE(observer3.IsNotified());
 }
