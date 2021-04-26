@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "IBeverage.h"
+#include <map>
 
 // Базовая реализация напитка, предоставляющая его описание
 class CBeverage : public IBeverage
@@ -78,12 +79,32 @@ private:
 	LatteType m_type;
 };
 
+enum class TeaType
+{
+	Red,
+	Black,
+	Green,
+	White,
+};
+
+namespace
+{
+
+	const std::map<TeaType, std::string> TEA_TYPE_TO_NAME = {
+		{ TeaType::Red, "Red" },
+		{ TeaType::Black, "Black" },
+		{ TeaType::Green, "Green" },
+		{ TeaType::White, "White" },
+	};
+
+}
+
 // Чай
 class CTea : public CBeverage
 {
 public:
-	CTea() 
-		:CBeverage("Tea") 
+	CTea(TeaType type)
+		: CBeverage(std::string("Tea (") + TEA_TYPE_TO_NAME.at(type) + ")")
 	{}
 
 	double GetCost() const override 
